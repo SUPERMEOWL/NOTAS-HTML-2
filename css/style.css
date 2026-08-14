@@ -1,0 +1,295 @@
+:root {
+    --bg-main: #0d1117;
+    --bg-side: #161b22;
+    --vsc-blue: #58a6ff;
+    --vsc-green: #238636;
+    --border: #30363d;
+}
+
+header h1{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.user-profile{
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* Base */
+body {
+    background: var(--bg-main);
+    color: #c9d1d9;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.view {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+}
+
+/* Dashboard y Carruseles */
+.materias-container {
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.materia-section {
+    margin-bottom: 40px;
+}
+
+.materia-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.materia-title {
+    font-family: 'Fira Code';
+    color: var(--vsc-blue);
+    font-size: 1.4rem;
+}
+
+.carrusel {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+}
+
+/* Editor Cornell Layout */
+.editor-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: var(--bg-side);
+    border-bottom: 1px solid var(--border);
+}
+
+.cornell-layout {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+}
+
+#note-title {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1.8rem;
+    background: var(--bg-main);
+    color: white;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    outline: none;
+    font-family: 'Fira Code', monospace;
+    flex-shrink: 0;
+}
+
+.cornell-grid {
+    display: grid;
+    flex-grow: 1;
+    grid-template-areas:
+        "pistas contenido"
+        "resumen resumen";
+    grid-template-columns: 25% 1fr;
+    grid-template-rows: 1fr 35%;
+    background-color: var(--border);
+    gap: 2px;
+    overflow: hidden;
+}
+
+/* Secciones del Editor */
+.c-pistas {
+    grid-area: pistas;
+    border-right: 2px solid var(--border);
+}
+
+.c-contenido {
+    grid-area: contenido;
+}
+
+.c-resumen {
+    grid-area: resumen;
+    border-top: 2px solid var(--vsc-blue);
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-main);
+}
+
+.label {
+    padding: 5px 10px;
+    font-size: 1rem;
+    color: var(--vsc-blue);
+    background: rgba(255, 255, 255, 0.02);
+    font-family: 'Fira Code', monospace;
+}
+
+textarea {
+    width: 100%;
+    height: 100%;
+    background: var(--bg-main);
+    border: none;
+    color: #d4d4d4;
+    padding: 10px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    font-family: 'Fira Code', monospace;
+    resize: none;
+    outline: none;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+textarea:focus {
+    background: rgba(47, 123, 210, 0.16);
+}
+
+/* Botones */
+button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: var(--vsc-blue);
+    color: white;
+    box-shadow: 0 4px 14px rgba(88, 166, 255, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.2);
+}
+
+.btn-secondary {
+    background-color: #21262d;
+    color: #c9d1d9;
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    transform: translateX(-5px);
+    color: var(--vsc-blue);
+}
+
+.btn-add-note {
+    min-width: 200px;
+    height: 120px;
+    border: 2px dashed var(--border);
+    background: transparent;
+    color: var(--vsc-green);
+    font-size: 2.5rem;
+}
+
+.btn-add-note:hover {
+    border-color: var(--vsc-green);
+    background: rgba(35, 134, 54, 0.05);
+}
+
+/* Tarjetas de Apuntes */
+.card-apunte {
+    min-width: 200px;
+    height: 120px;
+    flex-shrink: 0;
+    background: linear-gradient(145deg, #1c2128, #161b22);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-apunte:hover {
+    border-color: var(--vsc-blue) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    background: #1c2128;
+}
+
+.card-apunte strong {
+    color: var(--vsc-blue);
+    font-size: 1.05rem;
+    font-family: 'Fira Code', monospace;
+    display: block;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.2;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-apunte small {
+    font-size: 1rem;
+    color: #8b949e;
+    font-family: 'Inter', sans-serif;
+    border-top: 1px solid rgba(48, 54, 61, 0.5);
+    padding-top: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-apunte::after {
+    content: " ◈ 🥵️ ";
+    position: absolute;
+    bottom: 45px;
+    right: 15px;
+    font-size: 1rem;
+    color: var(--vsc-green);
+    opacity: 0.5;
+}
+
+.card-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.btn-delete {
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    opacity: 0.3;
+    transition: 0.2s;
+    padding: 5px;
+}
+
+.btn-delete:hover {
+    opacity: 1;
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 5px red);
+}

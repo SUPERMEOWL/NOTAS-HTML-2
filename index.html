@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> APUNTES 🥵️ </title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="vscode-dark">
+
+    <div id="dashboard" class="view">
+        <header class="app-header">
+            <div class="logo">
+                <h1><b> --- MIS APUNTES --- </b></h1>
+            </div>
+            <div class="user-profile"> • KEVIN BUBU • </div>
+        </header>
+
+        <main class="materias-container">
+            <div id="render-materias"></div>
+        </main>
+    </div>
+
+    <div id="editor" class="view" style="display: none;">
+        <nav class="editor-nav">
+            <button id="btn-back" class="btn-secondary"> ← Volver al Menú </button>
+            <span id="current-materia-tag"> MATERIA: </span>
+            <button id="btn-save" class="btn-primary"> Guardar </button>
+        </nav>
+
+        <main class="cornell-layout">
+            <input type="hidden" id="current-id">
+            <input type="text" id="note-title" placeholder="> Título del tema...">
+            
+            <div class="cornell-grid">
+                <section class="c-pistas">
+                    <div class="label"> KEYWORDS </div>
+                    <textarea id="t-pistas" placeholder=" • Keywords o conceptos clave..."></textarea>
+                </section>
+
+                <section class="c-contenido">
+                    <div class="label"> CONTENIDO </div>
+                    <textarea id="t-contenido" placeholder=" • Desarrollo del tema..."></textarea>
+                </section>
+
+                <section class="c-resumen">
+                    <div class="label"> RESUMEN </div>
+                    <textarea id="t-resumen" placeholder=" • Conclusión o resumen final..."></textarea>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
